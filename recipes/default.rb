@@ -40,6 +40,7 @@ include_recipe 'glassfish::derive_version'
 include_recipe 'java'
 
 group node['glassfish']['group'] do
+  gid node['glassfish']['gid']
   not_if "getent group #{node['glassfish']['group']}"
   not_if { node['install']['external_users'].casecmp("true") == 0 }
 end
@@ -47,6 +48,7 @@ end
 user node['glassfish']['user'] do
   comment 'GlassFish Application Server'
   gid node['glassfish']['group']
+  uid node['glassfish']['uid']                           
   home node['glassfish']['base_dir']
   shell '/bin/bash'
   system true
