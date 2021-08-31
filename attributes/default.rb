@@ -23,6 +23,8 @@ default['glassfish']['group'] = 'glassfish-admin'
 default['glassfish']['version'] = '4.0'
 #<> variant: The variant of the GlassFish install package. Usually payara or glassfish.
 default['glassfish']['variant'] = 'glassfish'
+default['glassfish']['uid']                   = "10210"
+default['glassfish']['gid']                   = "10211"
 #<> Package URL: The url to the GlassFish install package.
 default['glassfish']['package_url'] = nil
 #<> GlassFish Base Directory: The base directory of the GlassFish install.
